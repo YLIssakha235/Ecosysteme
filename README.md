@@ -146,3 +146,9 @@ As example the method EatAnimal is using this principle by using an `Animal` obj
 			Attack(lifeForm as Carnivore, visionList);
 	}
 ```
+
+
+
+
+
+
