@@ -10,6 +10,157 @@
 Le projet consiste à créer un simulateur d'écosystème simplifié. Ce simulateur modélise un environnement 2D dans lequel des formes de vie interagissent selon des règles biologiques et écologiques. Les entités vivantes incluent des animaux (carnivores et herbivores), des plantes et des déchets organiques. Le projet met en œuvre des concepts tels que l'énergie, la reproduction, la consommation et les interactions entre entités.
 
 
+## Structure du projet
+Le simulateur est organisé autour de classes principales représentant les éléments de l'écosystème. Les diagrammes inclus fournissent une vue d'ensemble des relations entre ces classes.
+
+## Diagrammes
+
+    * Diagramme de Classes : Vue d'ensemble de la structure, montrant l'héritage et les associations entre classes.
+
+    * Diagramme de Séquence : Illustrations des interactions entre entités lors d'une simulation.
+
+## Détails des composants 
+
+### Classe Animal
+
+#### Description
+
+Animal est une classe abstraite qui sert de base aux carnivores et herbivores.
+
+#### Attributs
+
+    * Sexe : Indique le sexe pour la reproduction.
+
+    * Velocity : Vecteur représentant la direction et la vitesse de déplacement.
+
+    * Vision : Rayon de perception de l'animal.
+
+    * Speed : Vitesse de déplacement.
+
+#### Méthodes Principales
+
+    * Deplacer() : Gère le déplacement.
+
+    * SawOpponent(FormeDeVie autre) : Détecte si une entité est dans le champ de vision.
+
+    * Mourir() : Gère la mort.
+
+
+#### Sous-classes
+
+    * Carnivore :
+
+        * Chasse les herbivores.
+
+        * Gagne de l'énergie lorsqu'il tue une proie.
+
+        * Peut se reproduire avec un partenaire.
+
+    * Herbivore :
+
+        * Mange des plantes.
+
+        * Se reproduit avec un partenaire.
+
+Classe Plante
+
+Description
+
+Représente les plantes qui se nourrissent de déchets organiques et se propagent dans leur environnement.
+
+Attributs
+
+ZoneDeSemis : Zone où de nouvelles plantes peuvent apparaître.
+
+ZoneDeRacine : Zone pour l'absorption des nutriments.
+
+PointsDeVie : Indique la santé.
+
+ReserveEnergie : Détermine l'énergie disponible.
+
+Méthodes Principales
+
+SePropager() : Gère la reproduction.
+
+AbsorberNutriments() : Consomme les nutriments des déchets organiques.
+
+ConsommerEnergie() : Réduit l'énergie ou les points de vie si l'énergie est à 0.
+
+Mourir() : Transforme la plante en déchet organique.
+
+
+Classe Zone
+
+Description
+
+Zone est une classe abstraite représentant une région circulaire autour d'une entité.
+
+Attributs
+
+Centre : Position centrale.
+
+Rayon : Rayon de la zone.
+
+Méthodes Principales
+
+Contient(FormeDeVie formeDeVie) : Vérifie si une entité est dans la zone.
+
+Sous-classes
+
+ZoneDeContact : Détecte les contacts entre entités.
+
+ZoneDeVision : Gère la perception visuelle.
+
+ZoneDeSemis : Définit les zones de propagation des plantes.
+
+ZoneDeRacine : Gère l'absorption des nutriments.
+
+
+Classe DechetOrganique
+
+Description
+
+Représente les déchets organiques produits par les plantes mortes ou les animaux.
+
+Attributs
+
+TempsDeDecomposition : Temps avant la disparition du déchet.
+
+EstDecompose : Indique si le déchet est complètement décomposé.
+
+Méthodes Principales
+
+SeDecomposer() : Réduit progressivement le temps de décomposition.
+
+GenererDechet(FormeDeVie formeDeVie) : Crée un déchet organique à partir d'une entité morte.
+
+
+
+Comportements et Interactions
+
+Cycle de Vie : Chaque entité consomme de l'énergie, perd des points de vie si l'énergie est épuisée, et meurt lorsqu'elle n'a plus de points de vie.
+
+Interactions :
+
+Les carnivores chassent les herbivores.
+
+Les herbivores mangent les plantes.
+
+Les plantes consomment les déchets organiques.
+
+Reproduction :
+
+Les animaux se reproduisent par contact entre un mâle et une femelle.
+
+Les plantes se propagent dans leur zone de semis.
+
+
+
+
+Conclusion
+
+Ce projet fournit une simulation complète et modulable d'un écosystème. Il applique des principes de biologie et de programmation orientée objet, offrant une structure claire et extensible.
+
 
 
 ## Run
