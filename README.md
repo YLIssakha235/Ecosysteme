@@ -184,22 +184,22 @@ Every entities is represented by a sprite.
 * Carnivore
 
 <p align="center">
-<img src="../Assets/Carnivore.png" alt="Carnivore" width="90">
+<img src="./Assets/Carnivore.png" alt="Carnivore" width="90">
 </p>
 
 * Plante
 <p align="center">
-	<img src="../ECOSYS/Assets/Plante.png" alt="Plante" width="90" >
+	<img src="./Assets/Plante.png" alt="Plante" width="90" >
 </p>
 
 * DéchetOrganique
 <p align="center">
-	<img src="../ECOSYS/Assets/Déchet.png" alt="Déchet" width="50" >
+	<img src="./Assets/Déchet.png" alt="Déchet" width="50" >
 </p>
 
 * Viande
 <p align="center">
-	<img src="../ECOSYS/Assets/Viande.png" alt="Viande" width="50" >
+	<img src="./Assets/Viande.png" alt="Viande" width="50" >
 </p>
 
 ## Class diagram
