@@ -175,31 +175,31 @@ Our simulation is based on the Monogame framework in C#.
 
 ## Simulation description
 Every entities is represented by a sprite.
-* Carnivorous: Groudon
+* Herbivore
 
 <p align="center">
-	<img src="../ECOSYS/Assets/Herbivore.png" alt="Groudon" width="50">
+	<img src="../ECOSYS/Assets/Herbivore.png" alt="Herbivore" width="90">
 </p>
 
-* Herbivorous: Herbizarre
+* Carnivore
 
 <p align="center">
-<img src="../ECOSYS/Assets/Carnivore.png" alt="Herbizarre" width="50">
+<img src="../ECOSYS/Assets/Carnivore.png" alt="Carnivore" width="90">
 </p>
 
-* Plants: SunPlant
+* Plante
 <p align="center">
-	<img src="../ECOSYS/Assets/Plante.png" alt="Plants" width="50" >
+	<img src="../ECOSYS/Assets/Plante.png" alt="Plante" width="90" >
 </p>
 
-* OrganicWaste: Poop
+* DéchetOrganique
 <p align="center">
-	<img src="../ECOSYS/Assets/Déchet.png" alt="Poop" width="50" >
+	<img src="../ECOSYS/Assets/Déchet.png" alt="Déchet" width="50" >
 </p>
 
-* Meat: Chicken leg
+* Viande
 <p align="center">
-	<img src="../ECOSYS/Assets/Viande.png" alt="Meat" width="50" >
+	<img src="../ECOSYS/Assets/Viande.png" alt="Viande" width="50" >
 </p>
 
 ## Class diagram
