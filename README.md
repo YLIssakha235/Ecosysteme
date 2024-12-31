@@ -15,9 +15,9 @@ Le simulateur est organisé autour de classes principales représentant les él�
 
 ## Diagrammes
 
-    * Diagramme de Classes : Vue d'ensemble de la structure, montrant l'héritage et les associations entre classes.
+* Diagramme de Classes : Vue d'ensemble de la structure, montrant l'héritage et les associations entre classes.
 
-    * Diagramme de Séquence : Illustrations des interactions entre entités lors d'une simulation.
+* Diagramme de Séquence : Illustrations des interactions entre entités lors d'une simulation.
 
 ## Détails des composants 
 
@@ -29,38 +29,38 @@ Animal est une classe abstraite qui sert de base aux carnivores et herbivores.
 
 #### Attributs
 
-    * Sexe : Indique le sexe pour la reproduction.
+* Sexe : Indique le sexe pour la reproduction.
 
-    * Velocity : Vecteur représentant la direction et la vitesse de déplacement.
+* Velocity : Vecteur représentant la direction et la vitesse de déplacement.
 
-    * Vision : Rayon de perception de l'animal.
+* Vision : Rayon de perception de l'animal.
 
-    * Speed : Vitesse de déplacement.
+* Speed : Vitesse de déplacement.
 
 #### Méthodes Principales
 
-    * Deplacer() : Gère le déplacement.
+* Deplacer() : Gère le déplacement.
 
-    * SawOpponent(FormeDeVie autre) : Détecte si une entité est dans le champ de vision.
+* SawOpponent(FormeDeVie autre) : Détecte si une entité est dans le champ de vision.
 
-    * Mourir() : Gère la mort.
+* Mourir() : Gère la mort.
 
 
 #### Sous-classes
 
-    * Carnivore :
+* Carnivore :
 
-        * Chasse les herbivores.
+    * Chasse les herbivores.
 
-        * Gagne de l'énergie lorsqu'il tue une proie.
+    * Gagne de l'énergie lorsqu'il tue une proie.
 
-        * Peut se reproduire avec un partenaire.
+    * Peut se reproduire avec un partenaire.
 
-    * Herbivore :
+* Herbivore :
 
-        * Mange des plantes.
+    * Mange des plantes.
 
-        * Se reproduit avec un partenaire.
+    * Se reproduit avec un partenaire.
 
 ### Classe Plante
 
@@ -70,23 +70,23 @@ Représente les plantes qui se nourrissent de déchets organiques et se propagen
 
 #### Attributs
 
-    * ZoneDeSemis : Zone où de nouvelles plantes peuvent apparaître.
+* ZoneDeSemis : Zone où de nouvelles plantes peuvent apparaître.
 
-    * ZoneDeRacine : Zone pour l'absorption des nutriments.
+* ZoneDeRacine : Zone pour l'absorption des nutriments.
 
-    * PointsDeVie : Indique la santé.
+* PointsDeVie : Indique la santé.
 
-    * ReserveEnergie : Détermine l'énergie disponible.
+* ReserveEnergie : Détermine l'énergie disponible.
 
 #### Méthodes Principales
 
-    * SePropager() : Gère la reproduction.
+* SePropager() : Gère la reproduction.
 
-    * AbsorberNutriments() : Consomme les nutriments des déchets organiques.
+* AbsorberNutriments() : Consomme les nutriments des déchets organiques.
 
-    * ConsommerEnergie() : Réduit l'énergie ou les points de vie si l'énergie est à 0.
+* ConsommerEnergie() : Réduit l'énergie ou les points de vie si l'énergie est à 0.
 
-    * Mourir() : Transforme la plante en déchet organique.
+* Mourir() : Transforme la plante en déchet organique.
 
 
 #### Classe Zone
@@ -97,23 +97,23 @@ Zone est une classe abstraite représentant une région circulaire autour d'une 
 
 #### Attributs
 
-    * Centre : Position centrale.
+* Centre : Position centrale.
 
-    * Rayon : Rayon de la zone.
+* Rayon : Rayon de la zone.
 
 #### Méthodes Principales
 
-    * Contient(FormeDeVie formeDeVie) : Vérifie si une entité est dans la zone.
+* Contient(FormeDeVie formeDeVie) : Vérifie si une entité est dans la zone.
 
-    * Sous-classes
+* Sous-classes
 
-    * ZoneDeContact : Détecte les contacts entre entités.
+* ZoneDeContact : Détecte les contacts entre entités.
 
-    * ZoneDeVision : Gère la perception visuelle.
+* ZoneDeVision : Gère la perception visuelle.
 
-    * ZoneDeSemis : Définit les zones de propagation des plantes.
+* ZoneDeSemis : Définit les zones de propagation des plantes.
 
-    * ZoneDeRacine : Gère l'absorption des nutriments.
+* ZoneDeRacine : Gère l'absorption des nutriments.
 
 
 #### Classe DechetOrganique
@@ -124,35 +124,35 @@ Représente les déchets organiques produits par les plantes mortes ou les anima
 
 #### Attributs
 
-    * TempsDeDecomposition : Temps avant la disparition du déchet.
+* TempsDeDecomposition : Temps avant la disparition du déchet.
 
-    * EstDecompose : Indique si le déchet est complètement décomposé.
+* EstDecompose : Indique si le déchet est complètement décomposé.
 
 #### Méthodes Principales
 
-    * SeDecomposer() : Réduit progressivement le temps de décomposition.
+* SeDecomposer() : Réduit progressivement le temps de décomposition.
 
-    * GenererDechet(FormeDeVie formeDeVie) : Crée un déchet organique à partir d'une entité morte.
+* GenererDechet(FormeDeVie formeDeVie) : Crée un déchet organique à partir d'une entité morte.
 
 
 
 #### Comportements et Interactions
 
-    * Cycle de Vie : Chaque entité consomme de l'énergie, perd des points de vie si l'énergie est épuisée, et meurt lorsqu'elle n'a plus de points de vie.
+* Cycle de Vie : Chaque entité consomme de l'énergie, perd des points de vie si l'énergie est épuisée, et meurt lorsqu'elle n'a plus de points de vie.
 
-    * Interactions :
+* Interactions :
 
-        Les carnivores chassent les herbivores.
+    Les carnivores chassent les herbivores.
 
-        Les herbivores mangent les plantes.
+    Les herbivores mangent les plantes.
 
-        Les plantes consomment les déchets organiques.
+    Les plantes consomment les déchets organiques.
 
-    * Reproduction :
+* Reproduction :
 
-        Les animaux se reproduisent par contact entre un mâle et une femelle.
+    Les animaux se reproduisent par contact entre un mâle et une femelle.
 
-        Les plantes se propagent dans leur zone de semis.
+    Les plantes se propagent dans leur zone de semis.
 
 
 
@@ -167,7 +167,6 @@ Ce projet fournit une simulation complète et modulable d'un écosystème. Il ap
 Launch the `Ecosystem` project to start the simulation.
 
 ## Framework
-Our simulation is based on the Monogame framework in C#.
 
 <p align="center">
 	<img src="./Images/Base.png"  width="700">
@@ -338,13 +337,13 @@ public partial class Herbivore : Animal
 
 ### Problème rencontrer lié à l'implémentaion
 
-    * Tout d'abord mon implémentation fonctionne mais elle ne réponds pas à toutes les critères demandées.
+* Tout d'abord mon implémentation fonctionne mais elle ne réponds pas à toutes les critères demandées.
 
-    * Quand je lance la simulation sans les animaux, j'ai une les plantes qui se propagent et se transforment en Déchet quand ils n'ont plus des points de vie.
+* Quand je lance la simulation sans les animaux, j'ai une les plantes qui se propagent et se transforment en Déchet quand ils n'ont plus des points de vie.
 
-    * Par contre dès que j'ajoute les animaux je vois mon implémentation bloquée s'ils n'ont plus de points de vie.
-    
-    * j'ai essayé malheureusement j'ai encore du mal à résoudre ce problème.
+* Par contre dès que j'ajoute les animaux je vois mon implémentation bloquée s'ils n'ont plus de points de vie.
+
+* j'ai essayé malheureusement j'ai encore du mal à résoudre ce problème.
 
 <p align="center">
 	<img src="./Images/Problème.png" width="500">
