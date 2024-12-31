@@ -212,55 +212,128 @@ Every entities is represented by a sprite.
 	<img src="./Images/DiagrammeDeSequence.png" width="500">
 </p>
 
-## SOLID principles
+## Principes SOLID
 ### Single responsibility principle
-> A class should have one and only one reason to change, meaning that a class should only have one job.
->
-> -- <cite>Robert C. Martin</cite>
 
-As example the class Carnivore as only the job to set all the caracteristics at the carnivorous such as the damage they can do or the possibility to attack other animals.
+Je prends l'exemple de la classe Plante qui hérite de FormeDeVie mais elle gère tout d'elle même.
+
 ```C#
-public abstract class Carnivore : Animal
-	{
-		private float damage; // Damages per seconds
+using Avalonia;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-		protected Carnivore(AnimalSex sex, int visionZoneRadius, int contactZoneRadius, float speed, float damage) : 
-			base(sex, visionZoneRadius, contactZoneRadius, speed)
-		{
-			this.damage = damage;
-		}
+namespace ECOSYS.ViewModels;
 
-		public float Damage
-		{
-			get { return damage; }
-		}
+public partial class Plante : FormeDeVie
+{
+    private const int EnergiePourPropagation = 30; // Énergie nécessaire pour se propager
+    private const int LimitePropagation = 10; // Maximum 10 plantes
 
-		// TODO: Implement the Eat method when the Meat is created
-		public override void Eat(IEatable food)
-		{
-			if (CanEat(food))
-			{
-				Energy += food.EatingEnergy;
-				Hunger -= food.SatiationPoint;
-			}
-		}
+    public int CompteurPropagation { get; private set; } = 0; // Compteur de propagations
+    public ZoneDeSemis? ZoneDeSemis { get; set; }
 
-		public override bool CanEat(IEatable food)
-		{
-			return (food is Meat);
-		}
+    public Plante(Point location, ZoneDeSemis? zoneDeSemis = null) : base(location, null)
+    {
+        ZoneDeSemis = zoneDeSemis;
 
-		public void Attack(Animal prey)
-		{
-			if (CanAttack(prey))
-				prey.Health -= damage;
-		}
-
-		public bool CanAttack(Animal prey)
-		{
-			return (prey is Herbivore);
-		}
+        var assetUri = new Uri("avares://ECOSYS/Assets/Plante.png");
+        ImageSource = new Bitmap(AssetLoader.Open(assetUri));
     }
+
+    public void SePropager(List<FormeDeVie> entites, int width, int height)
+    {
+        // Vérifie s'il y a déjà 10 plantes dans la simulation
+        if (entites.OfType<Plante>().Count() >= 10)
+        {
+            return; // Ne propage pas si le nombre de plantes atteint la limite
+        }
+
+        if (ReserveEnergie < EnergiePourPropagation || CompteurPropagation >= LimitePropagation)
+        {
+            return; // Pas assez d'énergie ou limite atteinte
+        }
+
+        var random = new Random();
+        int essais = 200; // Nombre maximal d'essais pour trouver une position libre
+
+        while (essais > 0)
+        {
+            var nouvellePosition = new Point(
+                Math.Clamp(Position.X + random.Next(0, 251), 10, width - 1), // Génère une position aléatoire plus éloignée
+                Math.Clamp(Position.Y + random.Next(0, 251), 0, height - 1)
+            );
+
+            if (ZoneDeSemis != null && ZoneDeSemis.Contient(this) && ZoneDeSemis.EstPositionDisponible(nouvellePosition))
+            {
+                var nouvellePlante = new Plante(nouvellePosition, ZoneDeSemis)
+                {
+                    ImageSource = new Bitmap(AssetLoader.Open(new Uri("avares://ECOSYS/Assets/Plante.png")))
+                };
+
+                entites.Add(nouvellePlante);
+                CompteurPropagation++;
+                ReserveEnergie -= EnergiePourPropagation; // Réduit l'énergie après propagation
+                break; 
+            }
+
+            essais--; // Réduit le nombre d'essais restants
+        }
+    }
+
+    public override void Mourir()
+    {
+        ReserveEnergie = 0;
+        PointsDeVie = 0;
+        ImageSource = new Bitmap(AssetLoader.Open(new Uri("avares://ECOSYS/Assets/Déchet.png")));
+    }
+}
+```
+
+Ainsi la classe Herbivore qui hérite de la classe Animal qui lui aussi hérite de la classe FormeDeVie.
+
+```C#
+using System;
+using Avalonia;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace ECOSYS.ViewModels;
+
+public partial class Herbivore : Animal
+{
+    public Herbivore(Point location, string sexe = "M") : base(location, null, sexe)
+    {
+        ImageSource = new Bitmap(AssetLoader.Open(new Uri("avares://ECOSYS/Assets/Herbivore.png")));
+    }
+
+    public void Manger(Plante plante)
+    {
+        if (plante.EstVivant && SawOpponent(plante))
+        {
+            plante.Mourir();
+            ReserveEnergie += 30; // Gain d'énergie après consommation de la plante
+        }
+    }
+
+    public override void Mourir()
+    {
+        PointsDeVie = 0;
+        ReserveEnergie = 0;
+        ImageSource = new Bitmap(AssetLoader.Open(new Uri("avares://ECOSYS/Assets/Déchet.png")));
+    }
+
+    protected override Animal CreerDescendant(Point position)
+    {
+        var random = new Random();
+        string sexeDescendant = random.Next(0, 2) == 0 ? "M" : "F";
+        return new Herbivore(position, sexeDescendant);
+    }
+}
+
 ```
 
 ### Liskov substitution principle
