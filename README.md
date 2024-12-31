@@ -344,5 +344,5 @@ Tout d'abord mon implémentation fonctionne mais elle ne réponds pas à toutes 
     * j'ai essayé malheureusement j'ai encore du mal à résoudre ce problème.
 
 <p align="center">
-	<img src="./Images/DiagrammeDeSequence.png" width="500">
+	<img src="./Images/Problème.png" width="500">
 </p>
