@@ -204,16 +204,12 @@ Every entities is represented by a sprite.
 
 ## Class diagram
 <p align="center">
-	<a href="./Diagrams/ClassDiagram.pdf">
-		<img src="./Diagrams/ClassDiagram.png" width="700">
-	</a>
+		<img src="./Images/DiagrammeDeClasse.png" width="700">
 </p>
 
 ## Sequence diagram
 <p align="center">
-	<a href="./Diagrams/SequenceDiagram.pdf">
-		<img src="./Diagrams/SequenceDiagram.png" width="500">
-	</a>
+	<img src="./Images/DiagrammeDeSequence.png" width="500">
 </p>
 
 ## SOLID principles
