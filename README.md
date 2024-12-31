@@ -178,7 +178,7 @@ Every entities is represented by a sprite.
 * Herbivore
 
 <p align="center">
-	<img src="./Assets/Herbivore.png"  width="200">
+	<img src="./Assets/Herbivore.png" alt="Herbivore" width="90">
 </p>
 
 * Carnivore
@@ -194,12 +194,12 @@ Every entities is represented by a sprite.
 
 * DéchetOrganique
 <p align="center">
-	<img src="./Assets/Déchet.png" alt="Déchet" width="50" >
+	<img src="./Assets/Déchet.png" alt="Déchet" width="90" >
 </p>
 
 * Viande
 <p align="center">
-	<img src="./Assets/Viande.png" alt="Viande" width="50" >
+	<img src="./Assets/Viande.png" alt="Viande" width="90" >
 </p>
 
 ## Class diagram
