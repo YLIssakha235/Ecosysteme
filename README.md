@@ -178,7 +178,7 @@ Every entities is represented by a sprite.
 * Herbivore
 
 <p align="center">
-	<img src="../ECOSYS/Assets/Herbivore.png" alt="Herbivore" width="90">
+	<img src="../ECOSYS/Assets/Herbivore.png"  width="90">
 </p>
 
 * Carnivore
