@@ -178,13 +178,13 @@ Every entities is represented by a sprite.
 * Herbivore
 
 <p align="center">
-	<img src="../ECOSYS/Assets/Herbivore.png"  width="200">
+	<img src="./Assets/Herbivore.png"  width="200">
 </p>
 
 * Carnivore
 
 <p align="center">
-<img src="../ECOSYS/Assets/Carnivore.png" alt="Carnivore" width="90">
+<img src="../Assets/Carnivore.png" alt="Carnivore" width="90">
 </p>
 
 * Plante
