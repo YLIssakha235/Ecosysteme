@@ -208,7 +208,7 @@ Every entities is represented by a sprite.
 
 ## Sequence diagram
 <p align="center">
-	<img src="./Images/DiagrammeDeSequence.png" width="500">
+	<img src="./Images/DiagrammeDeSequence.png" width="700">
 </p>
 
 ## Principes SOLID
@@ -346,5 +346,5 @@ public partial class Herbivore : Animal
 * j'ai essayé malheureusement j'ai encore du mal à résoudre ce problème.
 
 <p align="center">
-	<img src="./Images/Problème.png" width="500">
+	<img src="./Images/Problème.png" width="700">
 </p>
