@@ -62,102 +62,102 @@ Animal est une classe abstraite qui sert de base aux carnivores et herbivores.
 
         * Se reproduit avec un partenaire.
 
-Classe Plante
+### Classe Plante
 
-Description
+#### Description
 
 Représente les plantes qui se nourrissent de déchets organiques et se propagent dans leur environnement.
 
-Attributs
+#### Attributs
 
-ZoneDeSemis : Zone où de nouvelles plantes peuvent apparaître.
+    * ZoneDeSemis : Zone où de nouvelles plantes peuvent apparaître.
 
-ZoneDeRacine : Zone pour l'absorption des nutriments.
+    * ZoneDeRacine : Zone pour l'absorption des nutriments.
 
-PointsDeVie : Indique la santé.
+    * PointsDeVie : Indique la santé.
 
-ReserveEnergie : Détermine l'énergie disponible.
+    * ReserveEnergie : Détermine l'énergie disponible.
 
-Méthodes Principales
+#### Méthodes Principales
 
-SePropager() : Gère la reproduction.
+    * SePropager() : Gère la reproduction.
 
-AbsorberNutriments() : Consomme les nutriments des déchets organiques.
+    * AbsorberNutriments() : Consomme les nutriments des déchets organiques.
 
-ConsommerEnergie() : Réduit l'énergie ou les points de vie si l'énergie est à 0.
+    * ConsommerEnergie() : Réduit l'énergie ou les points de vie si l'énergie est à 0.
 
-Mourir() : Transforme la plante en déchet organique.
+    * Mourir() : Transforme la plante en déchet organique.
 
 
-Classe Zone
+#### Classe Zone
 
-Description
+#### Description
 
 Zone est une classe abstraite représentant une région circulaire autour d'une entité.
 
-Attributs
+#### Attributs
 
-Centre : Position centrale.
+    * Centre : Position centrale.
 
-Rayon : Rayon de la zone.
+    * Rayon : Rayon de la zone.
 
-Méthodes Principales
+#### Méthodes Principales
 
-Contient(FormeDeVie formeDeVie) : Vérifie si une entité est dans la zone.
+    * Contient(FormeDeVie formeDeVie) : Vérifie si une entité est dans la zone.
 
-Sous-classes
+    * Sous-classes
 
-ZoneDeContact : Détecte les contacts entre entités.
+    * ZoneDeContact : Détecte les contacts entre entités.
 
-ZoneDeVision : Gère la perception visuelle.
+    * ZoneDeVision : Gère la perception visuelle.
 
-ZoneDeSemis : Définit les zones de propagation des plantes.
+    * ZoneDeSemis : Définit les zones de propagation des plantes.
 
-ZoneDeRacine : Gère l'absorption des nutriments.
+    * ZoneDeRacine : Gère l'absorption des nutriments.
 
 
-Classe DechetOrganique
+#### Classe DechetOrganique
 
-Description
+#### Description
 
 Représente les déchets organiques produits par les plantes mortes ou les animaux.
 
-Attributs
+#### Attributs
 
-TempsDeDecomposition : Temps avant la disparition du déchet.
+    * TempsDeDecomposition : Temps avant la disparition du déchet.
 
-EstDecompose : Indique si le déchet est complètement décomposé.
+    * EstDecompose : Indique si le déchet est complètement décomposé.
 
-Méthodes Principales
+#### Méthodes Principales
 
-SeDecomposer() : Réduit progressivement le temps de décomposition.
+    * SeDecomposer() : Réduit progressivement le temps de décomposition.
 
-GenererDechet(FormeDeVie formeDeVie) : Crée un déchet organique à partir d'une entité morte.
-
-
-
-Comportements et Interactions
-
-Cycle de Vie : Chaque entité consomme de l'énergie, perd des points de vie si l'énergie est épuisée, et meurt lorsqu'elle n'a plus de points de vie.
-
-Interactions :
-
-Les carnivores chassent les herbivores.
-
-Les herbivores mangent les plantes.
-
-Les plantes consomment les déchets organiques.
-
-Reproduction :
-
-Les animaux se reproduisent par contact entre un mâle et une femelle.
-
-Les plantes se propagent dans leur zone de semis.
+    * GenererDechet(FormeDeVie formeDeVie) : Crée un déchet organique à partir d'une entité morte.
 
 
 
+#### Comportements et Interactions
 
-Conclusion
+    * Cycle de Vie : Chaque entité consomme de l'énergie, perd des points de vie si l'énergie est épuisée, et meurt lorsqu'elle n'a plus de points de vie.
+
+    * Interactions :
+
+        Les carnivores chassent les herbivores.
+
+        Les herbivores mangent les plantes.
+
+        Les plantes consomment les déchets organiques.
+
+    * Reproduction :
+
+        Les animaux se reproduisent par contact entre un mâle et une femelle.
+
+        Les plantes se propagent dans leur zone de semis.
+
+
+
+
+#### Conclusion
 
 Ce projet fournit une simulation complète et modulable d'un écosystème. Il applique des principes de biologie et de programmation orientée objet, offrant une structure claire et extensible.
 
