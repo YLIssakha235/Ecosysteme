@@ -336,3 +336,13 @@ public partial class Herbivore : Animal
 
 ```
 
+### Problème rencontrer lié à l'implémentaion
+
+Tout d'abord mon implémentation fonctionne mais elle ne réponds pas à toutes les critères demandées. 
+    * Quand je lance la simulation sans les animaux, j'ai une les plantes qui se propagent et se transforment en Déchet quand ils n'ont plus des points de vie.
+    * Par contre dès que j'ajoute les animaux je vois mon implémentation bloquée s'ils n'ont plus de points de vie.
+    * j'ai essayé malheureusement j'ai encore du mal à résoudre ce problème.
+
+<p align="center">
+	<img src="./Images/DiagrammeDeSequence.png" width="500">
+</p>
