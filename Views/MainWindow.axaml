@@ -1,0 +1,150 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ECOSYS.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ECOSYS.Views.MainWindow"
+        x:DataType="vm:SimulationViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Simulation Écosystème">
+
+    <Window.Styles>
+        <Style Selector="ItemsControl > ContentPresenter" x:DataType="vm:FormeDeVie">
+            <Setter Property="Canvas.Left" Value="{Binding Position.X}" />
+            <Setter Property="Canvas.Top" Value="{Binding Position.Y}" />
+        </Style>
+    </Window.Styles>
+
+    <Grid>
+        <!-- Image de fond -->
+        <Image Source="/Assets/Herbe.jpg" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <!-- ItemsControl pour les FormeDeVie -->
+        <ItemsControl ItemsSource="{Binding Entites}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.DataTemplates>
+                <DataTemplate DataType="{x:Type vm:Carnivore}">
+                    <Grid>
+                        <!-- Image de CARNIVORE -->
+                        <Image Width="75" Height="75" Source="{Binding ImageSource}" />
+
+                        <!-- Conteneur des informations -->
+                        <Border Background="#CCFFFFFF"
+                                CornerRadius="5"
+                                BorderBrush="Green"
+                                BorderThickness="1"
+                                Width="50" 
+                                Height= "50"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,0,120"
+                                Padding="0">
+                            <StackPanel>
+                                <TextBlock Text="Énergie :"
+                                           Foreground="Black"
+                                           FontWeight="Bold"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding ReserveEnergie}"
+                                           Foreground="Black"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="PV :"
+                                           Foreground="Red"
+                                           FontWeight="Bold"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding PointsDeVie}"
+                                           Foreground="Red"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type vm:Herbivore}">
+                    <Grid>
+                        <Image Width="75" Height="75" Source="{Binding ImageSource}" />
+
+                        <Border Background="#CCFFFFFF"
+                                CornerRadius="5"
+                                BorderBrush="Green"
+                                BorderThickness="1"
+                                Width="50" 
+                                Height = "50"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,0,120" 
+                                Padding="2">
+                            <StackPanel>
+                                <TextBlock Text="Énergie :"
+                                           Foreground="Black"
+                                           FontWeight="Bold"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding ReserveEnergie}"
+                                           Foreground="Black"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="PV :"
+                                           Foreground="Red"
+                                           FontWeight="Bold"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding PointsDeVie}"
+                                           Foreground="Red"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type vm:Plante}">
+                    <Grid>
+                        <Image Width="75" Height="75" Source="{Binding ImageSource}" />
+
+                        <Border Background="#CCFFFFFF"
+                                CornerRadius="5"
+                                BorderBrush="Green"
+                                BorderThickness="1"
+                                Width="50" 
+                                Height = "50"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,0,120" 
+                                Padding="2">
+                            <StackPanel>
+                                <TextBlock Text="Énergie :"
+                                            Foreground="Black"
+                                           FontWeight="Bold"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding ReserveEnergie}"
+                                           Foreground="Black"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="PV :"
+                                           Foreground="Red"
+                                           FontWeight="Bold"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding PointsDeVie}"
+                                           Foreground="Red"
+                                           FontSize="9"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.DataTemplates>
+        </ItemsControl>
+    </Grid>
+</Window>

@@ -1,0 +1,76 @@
+@startuml
+
+' Classe de base pour toutes les formes de vie
+class FormeDeVie {
+    - int pointsDeVie
+    - int reserveEnergie
+    + void consommerEnergie()
+    + void mourir()
+}
+
+' Classe de base pour les animaux
+class Animal extends FormeDeVie {
+    - String sexe
+    + void deplacer()
+    + void attaquer(FormeDeVie cible)
+    + void seReproduire(Animal partenaire)
+    + boolean estDansZone(Zone zone)
+}
+
+' Classe pour les carnivores
+class Carnivore extends Animal {
+    + void chasser(Animal proie)
+}
+
+' Classe pour les herbivores
+class Herbivore extends Animal {
+    + void manger(Plante plante)
+}
+
+' Classe pour les plantes
+class Plante extends FormeDeVie {
+    + void absorberDechetsOrganique(DechetOrganique dechet)
+    + void sePropager()
+}
+
+' Classe pour la viande
+class Viande {
+    - int dureeDeComposition
+    + void devenirDechet()
+    + boolean estDecompose()
+}
+
+' Classe pour les déchets organiques
+class DechetOrganique {
+    - int quantite
+}
+
+' Gestion des zones
+class Zone {
+    - int rayon
+    + boolean contient(FormeDeVie formeDeVie)
+}
+
+class ZoneDeVision extends Zone {}
+class ZoneDeContact extends Zone {}
+class ZoneDeRacines extends Zone {}
+class ZoneDeSemis extends Zone {}
+
+' Relations
+FormeDeVie <|-- Animal
+FormeDeVie <|-- Plante
+Animal <|-- Carnivore
+Animal <|-- Herbivore
+FormeDeVie --> Viande : "produit"
+Viande --> DechetOrganique : "devient"
+Plante --> DechetOrganique : "consomme"
+Zone <|-- ZoneDeVision
+Zone <|-- ZoneDeContact
+Zone <|-- ZoneDeRacines
+Zone <|-- ZoneDeSemis
+Animal --> ZoneDeVision : "utilise"
+Animal --> ZoneDeContact : "utilise"
+Plante --> ZoneDeRacines : "utilise"
+Plante --> ZoneDeSemis : "utilise"
+
+@enduml

@@ -1,0 +1,54 @@
+@startuml
+
+' Début du diagramme de séquence pour le projet Écosystème
+actor Animal
+actor Plante
+actor Simulation
+entity Viande
+entity DechetOrganique
+entity ZoneDeVision
+entity ZoneDeContact
+entity ZoneDeSemis
+
+group Initialisation
+    Simulation -> Plante : générer des plantes
+    Simulation -> Animal : générer des animaux
+end
+
+group Cycle de vie
+    loop Chaque étape
+        Animal -> Animal : consommerEnergie()
+        alt Energie insuffisante
+            Animal -> Animal : convertirPointsDeVieEnEnergie()
+            alt Points de vie épuisés
+                Animal -> Viande : devenirViande()
+                Viande -> DechetOrganique : devenirDechet()
+            end
+        end
+
+        Animal -> ZoneDeVision : détecter entités
+        alt Prédateur détecté
+            Animal -> Animal : fuir()
+        else Proie détectée
+            Animal -> Animal : chasser(proie)
+        else Nourriture détectée
+            Animal -> Plante : manger()
+        end
+
+        Plante -> DechetOrganique : consommer(dechets)
+        Plante -> ZoneDeSemis : sePropager()
+    end
+end
+
+group Reproduction
+    alt Contact mâle-femelle
+        Animal -> ZoneDeContact : vérifier contact
+        Animal -> Animal : seReproduire(partenaire)
+        Animal -> Simulation : générer un nouveau-né
+    else Plante
+        Plante -> ZoneDeSemis : générer de nouvelles plantes
+    end
+end
+
+@enduml
+

@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECOSYS", "ECOSYS.csproj", "{83C1D607-1EFC-0DD2-787E-E2A057280EC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83C1D607-1EFC-0DD2-787E-E2A057280EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C1D607-1EFC-0DD2-787E-E2A057280EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C1D607-1EFC-0DD2-787E-E2A057280EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C1D607-1EFC-0DD2-787E-E2A057280EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16E0E579-3A33-4851-9B76-88031D25FA14}
+	EndGlobalSection
+EndGlobal
