@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ECOSYS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb58fb23e3722b8fdd817b06e857c5e4253bd825")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c221a606c6354d2f53aa3f1e01a70407c8d75cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ECOSYS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ECOSYS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

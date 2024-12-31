@@ -170,7 +170,7 @@ Launch the `Ecosystem` project to start the simulation.
 Our simulation is based on the Monogame framework in C#.
 
 <p align="center">
-	<img src="./ECOSYS/Images/Base.png" alt="Groudon" width="700">
+	<img src="./Base.png" alt="Groudon" width="700">
 </p>
 
 ## Simulation description
