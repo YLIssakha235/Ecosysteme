@@ -336,39 +336,3 @@ public partial class Herbivore : Animal
 
 ```
 
-### Liskov substitution principle
->Let q(x) be a property provable about objects of x of type T.
-Then q(y) should be provable for objects y of type S
-where S is a subtype of T.
->
-> -- <cite>Barbara Liskov and Jeannette Wing</cite>
-
-Animal can be replaced by every of its subclass (Carnivore, Herbivore, ...).
-
-As example the method EatAnimal is using this principle by using an `Animal` object as `Carnivore`. 
-```C#
-	void EatAnimal(List<Entity> visionList, Animal lifeForm)
-	{
-		if (lifeForm.IsHungry() == false)
-			return;
-
-		List<Entity> eatableInVision = new List<Entity>(visionList.FindAll(delegate (Entity visionLife) { return lifeForm.CanEat(visionLife as IEatable); }));
-		List<Entity> eatableInContact = new List<Entity>(eatableInVision.FindAll(lifeForm.IsInContactZone));
-
-		if (eatableInContact.Count != 0)
-			Eat(lifeForm, eatableInContact[0] as IEatable);
-		else if (eatableInVision.Count != 0)
-		{
-			lifeForm.DestinationX = eatableInVision[0].Sprite.PositionX;
-			lifeForm.DestinationY = eatableInVision[0].Sprite.PositionY;
-		}
-		else if (lifeForm is Carnivore)
-			Attack(lifeForm as Carnivore, visionList);
-	}
-```
-
-
-
-
-
-
