@@ -149,7 +149,6 @@ Autre entité utilisé :
 
 
 ## Principes SOLID
-### Single responsibility principle
 
 Je prends l'exemple de la classe Plante qui hérite de FormeDeVie mais elle gère tout d'elle même.
 
