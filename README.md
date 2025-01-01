@@ -25,7 +25,11 @@ Le simulateur est organisé autour de classes principales représentant les él�
 
 #### Description
 
-Animal est une classe abstraite qui sert de base aux carnivores et herbivores.
+Animal est une classe abstraite qui sert de base aux carnivores et herbivores. 
+
+Cette abstraction respecte le principe OCP en permettant l'extension par l'ajout de nouveaux types d'animaux sans modifier la classe de base.
+Elle respecte aussi le LSP : toutes les sous-classes (comme Carnivore et Herbivore) peuvent être utilisées de manière interchangeable avec Animal, garantissant que le comportement attendu reste cohérent.
+
 
 #### Attributs
 
@@ -62,11 +66,13 @@ Animal est une classe abstraite qui sert de base aux carnivores et herbivores.
 
     * Se reproduit avec un partenaire.
 
+L'ajout de nouvelles classes (par exemple, Omnivore) peut se faire sans modifier Animal tout en respectant son contrat comportemental.
+
 ### Classe Plante
 
 #### Description
 
-Représente les plantes qui se nourrissent de déchets organiques et se propagent dans leur environnement.
+Représente les plantes qui se nourrissent de déchets organiques et se propagent dans leur environnement. Elle respecte l'OCP en permettant l'ajout de nouvelles fonctionnalités spécifiques (ex. plantes carnivores) via l'héritage. Le LSP est respecté en garantissant que toute plante spécialisée fonctionne comme une Plante classique dans les zones d'interaction ou de reproduction.
 
 #### Attributs
 
@@ -93,7 +99,8 @@ Représente les plantes qui se nourrissent de déchets organiques et se propagen
 
 #### Description
 
-Zone est une classe abstraite représentant une région circulaire autour d'une entité.
+Zone est une classe abstraite représentant une région circulaire autour d'une entité. Elle respecte l'OCP en permettant la création de nouvelles zones spécialisées sans modifier la base. Le LSP est également respecté, car toute zone spécifique (étendue de Zone) fonctionne de manière cohérente avec son interface de base.
+
 
 #### Attributs
 
@@ -120,7 +127,8 @@ Zone est une classe abstraite représentant une région circulaire autour d'une 
 
 #### Description
 
-Représente les déchets organiques produits par les plantes mortes ou les animaux.
+Représente les déchets organiques produits par les plantes mortes ou les animaux. Cette classe respecte l'OCP car elle peut être étendue pour inclure d'autres types de déchets. Le LSP est assuré en garantissant que tout déchet spécialisé peut être traité comme un DechetOrganique standard.
+
 
 #### Attributs
 
@@ -159,7 +167,9 @@ Représente les déchets organiques produits par les plantes mortes ou les anima
 
 #### Conclusion
 
-Ce projet fournit une simulation complète et modulable d'un écosystème. Il applique des principes de biologie et de programmation orientée objet, offrant une structure claire et extensible.
+Ce projet fournit une simulation complète et modulable d'un écosystème. En appliquant les principes OCP et LSP, il garantit une extensibilité sans altérer les classes existantes et maintient des comportements cohérents pour toutes les entités, favorisant une structure claire et maintenable.
+
+
 
 
 
