@@ -131,7 +131,7 @@ Représente les déchets organiques produits par les plantes mortes ou les anima
 
 
 ## Run
-Au lancement du projet `Ecosystem`
+Au lancement du projet `Ecosysteme`
 
 ## Cadre
 
