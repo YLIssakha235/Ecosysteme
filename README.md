@@ -164,16 +164,16 @@ Ce projet fournit une simulation complète et modulable d'un écosystème. Il ap
 
 
 ## Run
-Launch the `Ecosystem` project to start the simulation.
+Au lancement du projet `Ecosystem`
 
-## Framework
+## Cadre
 
 <p align="center">
 	<img src="./Images/Base.png"  width="700">
 </p>
 
 ## Simulation description
-Every entities is represented by a sprite.
+Toutes les entités utilisées 
 * Herbivore
 
 <p align="center">
