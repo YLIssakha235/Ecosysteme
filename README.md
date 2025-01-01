@@ -19,12 +19,12 @@ Le simulateur est organisé autour de classes principales représentant les él�
 
 * Diagramme de Séquence : Illustrations des interactions entre entités lors d'une simulation.
 
-## Class diagram
+## Diagramme de Classes
 <p align="center">
 		<img src="./Images/DiagrammeDeClasse.png" width="700">
 </p>
 
-## Sequence diagram
+## Diagramme de Séquence
 <p align="center">
 	<img src="./Images/DiagrammeDeSequence.png" width="700">
 </p>
