@@ -167,19 +167,7 @@ Au lancement du projet `Ecosystem`
 </p>
 
 ## Simulation description
-Toutes les entités utilisées 
-
-
-* Carnivore
-
-
-
-
-
-* DéchetOrganique
-<p align="center">
-	<img src="./Assets/Déchet.png" alt="Déchet" width="90" >
-</p>
+Autre entité utilisé :  
 
 * Viande
 <p align="center">
