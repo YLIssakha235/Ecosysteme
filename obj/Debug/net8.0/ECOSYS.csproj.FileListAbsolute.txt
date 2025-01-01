@@ -66,3 +66,4 @@ C:\Users\yayal\OneDrive - ECAM\Bureau\ECAM\BAC3\Software engineering 1\Structure
 C:\Users\yayal\OneDrive - ECAM\Bureau\ECAM\BAC3\Software engineering 1\Structures données\ECOSYS\obj\Debug\net8.0\ECOSYS.csproj.Up2Date
 C:\Users\yayal\OneDrive - ECAM\Bureau\ECAM\BAC3\Software engineering 1\Structures données\ECOSYS\obj\Debug\net8.0\ECOSYS.genruntimeconfig.cache
 C:\Users\yayal\OneDrive - ECAM\Bureau\ECAM\BAC3\Software engineering 1\Structures données\ECOSYS\obj\Debug\net8.0\ref\ECOSYS.dll
+C:\Users\yayal\OneDrive - ECAM\Bureau\ECAM\BAC3\Software engineering 1\Structures données\ECOSYS\obj\Debug\net8.0\ECOSYS.sourcelink.json

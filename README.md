@@ -19,6 +19,18 @@ Le simulateur est organisé autour de classes principales représentant les él�
 
 * Diagramme de Séquence : Illustrations des interactions entre entités lors d'une simulation.
 
+## Class diagram
+<p align="center">
+		<img src="./Images/DiagrammeDeClasse.png" width="700">
+</p>
+
+## Sequence diagram
+<p align="center">
+	<img src="./Images/DiagrammeDeSequence.png" width="700">
+</p>
+
+
+
 ## Détails des composants 
 
 ### Classe Animal
@@ -211,15 +223,6 @@ Toutes les entités utilisées
 	<img src="./Assets/Viande.png" alt="Viande" width="90" >
 </p>
 
-## Class diagram
-<p align="center">
-		<img src="./Images/DiagrammeDeClasse.png" width="700">
-</p>
-
-## Sequence diagram
-<p align="center">
-	<img src="./Images/DiagrammeDeSequence.png" width="700">
-</p>
 
 ## Principes SOLID
 ### Single responsibility principle
