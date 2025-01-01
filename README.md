@@ -293,3 +293,13 @@ Ce projet fournit une simulation complète et modulable d'un écosystème. En ap
 </p>
 
 
+### Amélioration possibles 
+
+* Clarification des critères et ajustement de l'implémentaion
+
+* Optimisation de la gestioin
+
+* Débogage et simulation progressive 
+
+* Révision de la logique des pointsDeVie
+
