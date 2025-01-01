@@ -61,22 +61,23 @@ Elle respecte aussi le LSP : toutes les sous-classes (comme Carnivore et Herbivo
 
 * Mourir() : Gère la mort.
 
+* Reproduction() : j'ai encore du mal à implémenter cela car la méthode change completement l'attente finale.
+
 
 #### Sous-classes
 
 * Carnivore :
 
-    * Chasse les herbivores.
-
-    * Gagne de l'énergie lorsqu'il tue une proie.
-
-    * Peut se reproduire avec un partenaire.
+<p align="center">
+<img src="./Assets/Carnivore.png" alt="Carnivore" width="90">
+</p>
 
 * Herbivore :
 
-    * Mange des plantes.
+<p align="center">
+	<img src="./Assets/Herbivore.png" alt="Herbivore" width="90">
+</p>
 
-    * Se reproduit avec un partenaire.
 
 L'ajout de nouvelles classes (par exemple, Omnivore) peut se faire sans modifier Animal tout en respectant son contrat comportemental.
 
@@ -98,14 +99,16 @@ Représente les plantes qui se nourrissent de déchets organiques et se propagen
 
 #### Méthodes Principales
 
-* SePropager() : Gère la reproduction.
-
-* AbsorberNutriments() : Consomme les nutriments des déchets organiques.
+* SePropager() : Gère la reproduction par défaut j'ai mis maximum 10 plantes.
 
 * ConsommerEnergie() : Réduit l'énergie ou les points de vie si l'énergie est à 0.
 
 * Mourir() : Transforme la plante en déchet organique.
 
+* Plante
+<p align="center">
+	<img src="./Assets/Plante.png" alt="Plante" width="90" >
+</p>
 
 #### Classe Zone
 
@@ -196,22 +199,13 @@ Au lancement du projet `Ecosystem`
 
 ## Simulation description
 Toutes les entités utilisées 
-* Herbivore
 
-<p align="center">
-	<img src="./Assets/Herbivore.png" alt="Herbivore" width="90">
-</p>
 
 * Carnivore
 
-<p align="center">
-<img src="./Assets/Carnivore.png" alt="Carnivore" width="90">
-</p>
 
-* Plante
-<p align="center">
-	<img src="./Assets/Plante.png" alt="Plante" width="90" >
-</p>
+
+
 
 * DéchetOrganique
 <p align="center">
