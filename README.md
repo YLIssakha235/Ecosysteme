@@ -110,33 +110,6 @@ Représente les plantes qui se nourrissent de déchets organiques et se propagen
 	<img src="./Assets/Plante.png" alt="Plante" width="90" >
 </p>
 
-#### Classe Zone
-
-#### Description
-
-Zone est une classe abstraite représentant une région circulaire autour d'une entité. Elle respecte l'OCP en permettant la création de nouvelles zones spécialisées sans modifier la base. Le LSP est également respecté, car toute zone spécifique (étendue de Zone) fonctionne de manière cohérente avec son interface de base.
-
-
-#### Attributs
-
-* Centre : Position centrale.
-
-* Rayon : Rayon de la zone.
-
-#### Méthodes Principales
-
-* Contient(FormeDeVie formeDeVie) : Vérifie si une entité est dans la zone.
-
-* Sous-classes
-
-* ZoneDeContact : Détecte les contacts entre entités.
-
-* ZoneDeVision : Gère la perception visuelle.
-
-* ZoneDeSemis : Définit les zones de propagation des plantes.
-
-* ZoneDeRacine : Gère l'absorption des nutriments.
-
 
 #### Classe DechetOrganique
 
@@ -299,6 +272,12 @@ public partial class Herbivore : Animal
 
 ```
 
+
+#### Conclusion
+
+Ce projet fournit une simulation complète et modulable d'un écosystème. En appliquant les principes OCP et LSP, il garantit une extensibilité sans altérer les classes existantes et maintient des comportements cohérents pour toutes les entités, favorisant une structure claire et maintenable.
+
+
 ### Problème rencontrer lié à l'implémentaion
 
 * Tout d'abord mon implémentation fonctionne mais elle ne réponds pas à toutes les critères demandées.
@@ -314,6 +293,3 @@ public partial class Herbivore : Animal
 </p>
 
 
-#### Conclusion
-
-Ce projet fournit une simulation complète et modulable d'un écosystème. En appliquant les principes OCP et LSP, il garantit une extensibilité sans altérer les classes existantes et maintient des comportements cohérents pour toutes les entités, favorisant une structure claire et maintenable.
