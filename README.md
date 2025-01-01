@@ -278,7 +278,7 @@ public partial class Herbivore : Animal
 Ce projet fournit une simulation complète et modulable d'un écosystème. En appliquant les principes OCP et LSP, il garantit une extensibilité sans altérer les classes existantes et maintient des comportements cohérents pour toutes les entités, favorisant une structure claire et maintenable.
 
 
-### Problème rencontrer lié à l'implémentaion
+### Problèmes rencontrés après l'implémentaion
 
 * Tout d'abord mon implémentation fonctionne mais elle ne réponds pas à toutes les critères demandées.
 
