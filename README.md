@@ -151,41 +151,10 @@ Représente les déchets organiques produits par les plantes mortes ou les anima
 
 * EstDecompose : Indique si le déchet est complètement décomposé.
 
-#### Méthodes Principales
-
-* SeDecomposer() : Réduit progressivement le temps de décomposition.
-
-* GenererDechet(FormeDeVie formeDeVie) : Crée un déchet organique à partir d'une entité morte.
-
-
-
-#### Comportements et Interactions
-
-* Cycle de Vie : Chaque entité consomme de l'énergie, perd des points de vie si l'énergie est épuisée, et meurt lorsqu'elle n'a plus de points de vie.
-
-* Interactions :
-
-    Les carnivores chassent les herbivores.
-
-    Les herbivores mangent les plantes.
-
-    Les plantes consomment les déchets organiques.
-
-* Reproduction :
-
-    Les animaux se reproduisent par contact entre un mâle et une femelle.
-
-    Les plantes se propagent dans leur zone de semis.
-
-
-
-
-#### Conclusion
-
-Ce projet fournit une simulation complète et modulable d'un écosystème. En appliquant les principes OCP et LSP, il garantit une extensibilité sans altérer les classes existantes et maintient des comportements cohérents pour toutes les entités, favorisant une structure claire et maintenable.
-
-
-
+* DéchetOrganique
+<p align="center">
+	<img src="./Assets/Déchet.png" alt="Déchet" width="90" >
+</p>
 
 
 ## Run
@@ -355,3 +324,8 @@ public partial class Herbivore : Animal
 <p align="center">
 	<img src="./Images/Problème.png" width="700">
 </p>
+
+
+#### Conclusion
+
+Ce projet fournit une simulation complète et modulable d'un écosystème. En appliquant les principes OCP et LSP, il garantit une extensibilité sans altérer les classes existantes et maintient des comportements cohérents pour toutes les entités, favorisant une structure claire et maintenable.
